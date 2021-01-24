@@ -6,17 +6,17 @@
   const rootElement = document.getElementById("root")
 
   const element = React.createElement('div', {
-    className: 'container',
-    children: ['Hello World', React.createElement('span', {
-      className: 'word',
-    },
-    'Good Bye',
-    React.createElement('span', {
+    className: 'hello',
+  },
+    React.createElement('strong', {
+      className: 'strong',
       style: {
-        color: 'red',
-      }
-    }, 'JimmyLv'))]
-  })
+        color: 'red'
+      },
+      children: React.createElement('span', {}, 'Awesome')
+    }),
+    'Hello World!'
+  )
 
   ReactDOM.render(element, rootElement)
   </script>

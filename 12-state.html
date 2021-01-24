@@ -6,13 +6,23 @@
   <script type="text/babel">
     function Greeting() {
       const [name, setName] = React.useState('')
+      const [age, setAge] = React.useState(0)
       const handleChange = event => setName(event.target.value)
       return (
         <div>
           <form>
             <label htmlFor="name">Name: </label>
             <input onChange={handleChange} id="name" />
+            <div>
+            <label htmlFor="age">Age: </label>
+            <input type="number" value={age} onChange={event => {
+              if (event.target.value > 0) {
+                setAge(event.target.value)
+              }
+            }} id="age" />
+            </div>
           </form>
+          <div>how old are you? {age}</div>
           {name ? <strong>Hello {name}</strong> : 'Please type your name'}
         </div>
       )

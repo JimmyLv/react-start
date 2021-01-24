@@ -4,14 +4,23 @@
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
   <script type="text/babel">
-    function Message({children}) {
-      return <div className="message">{children}</div>
+    function Message({ param, children }) {
+      console.log('children', children)
+      return <div className="message">{param} World
+      <div>
+        {children}
+      </div></div>
     }
 
+    function renderComp(param) {
+      return <div>{param} World</div>
+    }
+    console.log('Message', <Message />)
     const element = (
       <div className="container">
-        <Message>Hello World</Message>
-        <Message>Goodbye World</Message>
+        {renderComp('Helooooooo')}
+        <Message param={'Goodbye'}>
+        </Message>
       </div>
     )
 
